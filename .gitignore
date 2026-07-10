@@ -5,6 +5,8 @@ frontend/node_modules/
 # Production builds
 frontend/dist/
 dist/
+public/index.html
+public/assets/
 
 # Environment files
 .env

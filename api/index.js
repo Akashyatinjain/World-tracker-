@@ -219,7 +219,7 @@ app.post("/api/users", async (req, res) => {
 
 // Serve React index.html for all other routes (handles client-side routing)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 if (!process.env.VERCEL) {
