@@ -31,9 +31,9 @@ const db = new pg.Client(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 // Serve frontend static build files in production
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 
 db.connect();
 
@@ -219,7 +219,7 @@ app.post("/api/users", async (req, res) => {
 
 // Serve React index.html for all other routes (handles client-side routing)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
 });
 
 if (!process.env.VERCEL) {
